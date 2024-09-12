@@ -1,7 +1,7 @@
 """
 This code generates random integers for input array
 """
-import subprocess
+import random
 
 
 def random_array(arr):
@@ -10,7 +10,5 @@ def random_array(arr):
     """
     shuffled_num = None
     for i, _ in enumerate(arr):
-        shuffled_num = subprocess.run(
-            ["shuf", "-i", "1-20", "-n", "1"], capture_output=True, check=False)
-        arr[i] = int(shuffled_num.stdout)
+        arr[i] = random.randint(1, 20)
     return arr
