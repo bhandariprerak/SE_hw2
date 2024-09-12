@@ -8,7 +8,6 @@ def random_array(arr):
     """
     This function generates 20 random integers to return as input array
     """
-    shuffled_num = None
     for i, _ in enumerate(arr):
         arr[i] = random.randint(1, 20)
     return arr
