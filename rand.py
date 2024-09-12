@@ -11,6 +11,6 @@ def random_array(arr):
     shuffled_num = None
     for i, _ in enumerate(arr):
         shuffled_num = subprocess.run(
-            ["gshuf", "-i", "1-20", "-n", "1"], capture_output=True, check=False)
+            ["shuf", "-i", "1-20", "-n", "1"], capture_output=True, check=False)
         arr[i] = int(shuffled_num.stdout)
     return arr
