@@ -9,7 +9,7 @@ def random_array(arr):
     This function generates 20 random integers to return as input array
     """
     shuffled_num = None
-    for i in enumerate(arr):
+    for i, _ in enumerate(arr):
         shuffled_num = subprocess.run(
             ["shuf", "-i", "1-20", "-n", "1"], capture_output=True, check=False)
         arr[i] = int(shuffled_num.stdout)

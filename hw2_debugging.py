@@ -38,7 +38,7 @@ def recombine(left_arr, right_arr):
     """
     left_index = 0
     right_index = 0
-    merge_arr = [None] * (len(left_arr) + len(right_arr))
+    merge_arr = []
     while left_index < len(left_arr) and right_index < len(right_arr):
         if left_arr[left_index] < right_arr[right_index]:
             merge_arr.append(left_arr[left_index])
@@ -48,10 +48,10 @@ def recombine(left_arr, right_arr):
             right_index += 1
 
     for i in range(right_index, len(right_arr)):
-        merge_arr[left_index + right_index] = right_arr[i]
+        merge_arr.append(right_arr[i])
 
     for i in range(left_index, len(left_arr)):
-        merge_arr[left_index + right_index] = left_arr[i]
+        merge_arr.append(left_arr[i])
 
     return merge_arr
 
