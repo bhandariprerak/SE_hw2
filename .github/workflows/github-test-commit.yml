@@ -1,0 +1,47 @@
+name: Test
+
+on: 
+    push:
+        branches:
+            - main # To run the script when using the main branch
+            - '**' # To run the script for any other branch as well
+
+jobs:
+    test: 
+        runs-on: macos-latest
+        steps:
+            - name: Pull the latest code
+              uses: actions/checkout@v4
+
+            - name: Install Python
+              uses: actions/setup-python@v5
+              with:
+                python-version: '3.x' # works with all python version > 3
+
+            - name: Install pip and pytest
+              run: |
+                python -m pip install --upgrade pip
+                pip install -r requirements.txt
+
+            - name: Static Analysis Tools
+              run: | 
+                  autopep8 hw2_debugging.py > post_traces/autopep8_hw2_debugging_trace.txt
+                  pylint hw2_debugging.py > post_traces/pylint_hw2_debugging_trace.txt
+                  pyright hw2_debugging.py > post_traces/pyright_hw2_debugging_trace.txt
+                  autopep8 rand.py > post_traces/autopep8_rand_trace.txt
+                  pylint rand.py > post_traces/pylint_rand_trace.txt
+                  pyright rand.py > post_traces/pyright_rand_trace.txt
+                  
+            - name: Test the cases
+              run: | 
+                pytest --cov=. --cov-report=term --cov-report=json:coverage.json # to test all cases with code coverage and report to terminal as well as to coverage.json file
+            
+            - name: Upload coverage to Codecov
+              uses: codecov/codecov-action@v3
+              with:
+                token: ${{ secrets.CODECOV_TOKEN }}
+                files: ./coverage.json
+
+
+
+
