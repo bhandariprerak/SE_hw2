@@ -47,9 +47,10 @@ def recombine(left_arr, right_arr):
             merge_arr.append(right_arr[right_index])
             right_index += 1
 
+    # adding all remaining elements of right array
     for i in range(right_index, len(right_arr)):
         merge_arr.append(right_arr[i])
-
+    # adding all remaining elements of left array
     for i in range(left_index, len(left_arr)):
         merge_arr.append(left_arr[i])
 
