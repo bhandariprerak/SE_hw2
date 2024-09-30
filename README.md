@@ -10,9 +10,9 @@
 <img alt="Language: Python" src="https://img.shields.io/badge/Language-Python-yellow"> <!-- Language-Python -->
 <a href="https://github.com/bhandariprerak/josephus-problem/blob/main/LICENSE"><img alt="License: MIT" src="https://img.shields.io/badge/License-MIT-purple"></a> <!-- License-MIT -->
 <img alt="Platform: Linux" src="https://img.shields.io/badge/Linux-FCC624?style=for-the-badge&logo=linux&logoColor=black"> <!-- Platform-Linux -->
-<img src="https://img.shields.io/badge/code%20style-pep8-orange.svg">
-<img src="https://img.shields.io/badge/linting-pylint-yellowgreen">
-<img src="https://microsoft.github.io/pyright/img/pyright_badge.svg">
+<img src="https://img.shields.io/badge/code%20style-pep8-orange.svg"> <!-- Autopep8 -->
+<img src="https://img.shields.io/badge/linting-pylint-yellowgreen"> <!-- Pylint -->
+<img src="https://microsoft.github.io/pyright/img/pyright_badge.svg"> <!-- Pyright -->
 </p>
 
 <h1 align="center">Merge Sort</h1>

@@ -17,7 +17,9 @@ def merge_sort(arr):
     Returns:
     list: The sorted list.
     """
-    if len(arr) == 1:
+
+    # This condition handles the recursion and case when input array is empty
+    if len(arr) == 1 or len(arr) == 0:
         return arr
 
     half = len(arr)//2
@@ -58,5 +60,6 @@ def recombine(left_arr, right_arr):
 
 
 input_arr = rand.random_array([None] * 20)
+print(input_arr)
 arr_out = merge_sort(input_arr)
 print(arr_out)

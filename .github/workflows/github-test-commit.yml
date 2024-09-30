@@ -23,13 +23,19 @@ jobs:
                 python -m pip install --upgrade pip
                 pip install -r requirements.txt
 
-            - name: Static Analysis Tools
+            - name: Autopep8 - Static Analysis Tools
               run: | 
                   autopep8 hw2_debugging.py > post_traces/autopep8_hw2_debugging_trace.txt
-                  pylint hw2_debugging.py > post_traces/pylint_hw2_debugging_trace.txt
-                  pyright hw2_debugging.py > post_traces/pyright_hw2_debugging_trace.txt
                   autopep8 rand.py > post_traces/autopep8_rand_trace.txt
+
+            - name: Pylint - Static Analysis Tools
+              run: | 
+                  pylint hw2_debugging.py > post_traces/pylint_hw2_debugging_trace.txt
                   pylint rand.py > post_traces/pylint_rand_trace.txt
+            
+            - name: Pyright - Static Analysis Tools
+              run: | 
+                  pyright hw2_debugging.py > post_traces/pyright_hw2_debugging_trace.txt
                   pyright rand.py > post_traces/pyright_rand_trace.txt
                   
             - name: Test the cases
