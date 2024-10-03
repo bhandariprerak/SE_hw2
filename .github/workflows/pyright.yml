@@ -5,7 +5,7 @@ on: [push]
 jobs:
   build:
 
-    runs-on: mac-latest
+    runs-on: macos-latest
     strategy:
       matrix:
         python-version: ["3.13"]
